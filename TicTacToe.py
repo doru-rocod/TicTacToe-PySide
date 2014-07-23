@@ -1,6 +1,4 @@
-#xSi0.py
-
-#coding: UTF-16
+#coding: UTF-8
 import os
 import subprocess
 import itertools
@@ -16,7 +14,6 @@ class Tabel(QMainWindow):
         QMainWindow.__init__(self)
         self.setWindowTitle("X si 0")
         self.setGeometry(300, 200, 302, 364)
-        #self.setSizeHint(302, 364)
         colcnt = len(data[0])
         rowcnt = len(data)
         self.tabel = QTableWidget(rowcnt, colcnt)
@@ -58,8 +55,7 @@ class Tabel(QMainWindow):
         self.toolbar.addAction(exitAction)
         
         
-        
-              
+                  
         self.unu = self.tabel.item(0, 0)
         self.doi = self.tabel.item(0, 1)
         self.trei = self.tabel.item(0, 2)
@@ -99,9 +95,8 @@ class Tabel(QMainWindow):
                           ((0, 0), (1, 2)):(0, 2),
                           ((1, 2), (0, 0)):(0, 2)}
                              
-        self.mijloaceOpuse = [[(0, 1), (2, 1)], [(1, 2), (1, 0)]]
         self.colturi = [(0,0), (0, 2), (2,0), (2, 2)]
-        self.mijloace = [(0,1), (1, 2), (2, 1), (1,0)]
+        self.mijlocuri = [(0,1), (1, 2), (2, 1), (1,0)]
         self.varianteWin = [
                        [(0, 0), (0, 1), (0, 2)], [(1, 0), (1, 1), (1, 2)], [(2, 0), (2, 1), (2, 2)],
                        [(0, 0), (1, 0), (2, 0)], [(0, 1), (1, 1), (2, 1)], [(0, 2), (1, 2), (2, 2)],
@@ -143,7 +138,7 @@ class Tabel(QMainWindow):
                         self.mutaricalc.append((i[0], i[1]))
                         self.mutariramase.remove(i)
                     else:
-                        for i in self.mijloace:
+                        for i in self.mijlocuri:
                             if i not in self.mutariom and i in self.mutariramase:
                                 self.tabel.item(i[0], i[1]).setText("o")
                                 self.mutaricalc.append((i[0], i[1]))
@@ -215,12 +210,6 @@ class Tabel(QMainWindow):
                             listavarramase.remove((k[0], k[1]))
                             return (k[0], k[1])
 
-
-    #vedem daca omul a pus in doua mijloace ca sa incolteasca la urmatoare mutare
-    def nuDouaMijloace(self):
-        for i in self.mutariom:
-            if i not in self.mijloace:
-                return True
 
     #fct care verifica daca calc a castigat si daca da, slecteaza campurile castigatoare si deselecteaza campul ultimei mutari
     def verWin(self):
