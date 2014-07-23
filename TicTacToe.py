@@ -301,7 +301,7 @@ class Tabel(QMainWindow):
 
     def restartJoc(self):
         self.close()
-        subprocess.call("python" + " ttt2.py", shell=True)
+        subprocess.call("python" + " TicTacToe.py", shell=True)
 
     def exitJoc(self):
         self.close()
