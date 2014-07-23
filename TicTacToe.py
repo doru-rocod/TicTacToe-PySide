@@ -123,7 +123,6 @@ class Tabel(QMainWindow):
                 self.mutariramase.remove((1, 1))
                 self.mutaricalc.append((1, 1))
         elif len(self.mutariom) == 2:
-            #t = self.verVarianteWinOm()
             t = self.verVarianteWin(self.varianteWin, self.mutariom, self.mutariramase, self.mutaricalc)
             if t:
                 #daca omul are vreo varianta de castig imediat calculatorul pune acolo
